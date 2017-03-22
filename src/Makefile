@@ -1,4 +1,4 @@
-CC := gcc
+CC ?= gcc
 
 CFLAGS_ALL_WARNINGS := -Wall -Wextra -Wformat=2 \
     -Wswitch-default -Wswitch-enum -Wcast-align -Wpointer-arith \

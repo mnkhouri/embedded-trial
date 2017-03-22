@@ -4,7 +4,9 @@ This git repo contains an incomplete C program, whose goal is to checks that a w
 
 ## Setup
 
-If you are doing this at the Wink office, your workstation is already set up. Please skip to the next section. If you're doing this on your own, you'll need to install libcurl on your Linux machine/VM. For Ubuntu: `sudo apt-get update && sudo apt-get install libcurl4-openssl-dev`.
+If you are doing this at the Wink office, your workstation is already set up. Please skip to the next section. If you're doing this on your own, you'll need to install libcurl on your machine:
+- For Ubuntu: `sudo apt-get update && sudo apt-get install libcurl4-openssl-dev`.
+- For OSX: you're already good to go (albeit with an outdate libcurl).
 
 
 
