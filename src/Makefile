@@ -1,11 +1,13 @@
-CC ?= gcc
-CFLAGS_WARN_ALL := -Wno-missing-braces -Wextra -Wno-missing-field-initializers -Wformat=2 \
+CC := gcc
+
+CFLAGS_ALL_WARNINGS := -Wall -Wextra -Wformat=2 \
     -Wswitch-default -Wswitch-enum -Wcast-align -Wpointer-arith \
     -Wbad-function-cast -Wstrict-overflow=5 -Wstrict-prototypes -Winline \
     -Wundef -Wnested-externs -Wcast-qual -Wshadow -Wfloat-equal -Wredundant-decls \
-    -Wold-style-definition -Wno-unused-parameter
-CFLAGS_ERROR_ALL := $(CFLAGS_WARN_ALL) -Werror
-CFLAGS += $(CFLAGS_ERROR_ALL)
+    -Wold-style-definition \
+    -Wno-unused-parameter -Wno-missing-field-initializers -Wno-missing-braces
+
+CFLAGS := $(CFLAGS_ALL_WARNINGS) -Werror
 
 EXECUTABLE := websiteChecker
 
@@ -16,4 +18,4 @@ $(EXECUTABLE): $(EXECUTABLE).c
 	$(CC) $(CFLAGS) -o $@ $^
 
 clean:
-	rm -f $(EXECUTABLE)
+	rm -f $(EXECUTABLE) *.o

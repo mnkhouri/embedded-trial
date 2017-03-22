@@ -24,7 +24,7 @@
  *                       PRIVATE METHOD DECLARATIONS                        *
  ****************************************************************************/
 int checkWebsite(char* url);
-void callScript(char* path);
+void execCommand(char* command);
 
 /****************************************************************************
  *                            PRIVATE METHODS                               *
@@ -38,10 +38,9 @@ int checkWebsite(char* url) {
 }
 
 /**
- * Attempts to call a script.
- * Does not need to validate if script exists or if script successfully exits.
+ * Attempts to call a (system) command.
  */
-void callScript(char* path) {
+void execCommand(char* command) {
 
 }
 
@@ -49,7 +48,7 @@ void callScript(char* path) {
  *                            PUBLIC METHODS                                *
  ****************************************************************************/
 /**
- * Calls a script if a website is reachable.
+ * Calls a script if a website is reachable (returns 200).
  * Param 1: Website URL
  * Param 2: Script path
  * Returns 0 if website was up, 1 otherwise.
