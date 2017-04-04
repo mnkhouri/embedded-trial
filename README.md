@@ -43,7 +43,9 @@ $ ./websiteChecker "hello world"
 hello world
 ```
 
+#### Commit
 
+Please make a commit at the end of this step, with the title "Completed step 1: command line echo"
 
 
 
@@ -69,15 +71,17 @@ At the end of this step, you should be able to generate the following output:
 ```
 $ cd src/
 $ make
-$ ./websiteChecker "example.com"; echo $?
+$ ./websiteChecker "example.com"
+$ echo $?
 0
-$ ./websiteChecker "thisIsNotARealWebsite.noTLD"; echo $?
+$ ./websiteChecker "thisIsNotARealWebsite.noTLD"
+$ echo $?
 1
 ```
 
 #### Commit
 
-Please make a commit at the end of this step, with the title "Completed checkWebsite() function"
+Please make a commit at the end of this step, with the title "Completed step 2: checkWebsite() function"
 
 
 
@@ -110,7 +114,7 @@ $ echo $?
 
 #### Commit
 
-Please make a commit at the end of this step, with the title "Completed checkWebsite program"
+Please make a commit at the end of this step, with the title "Completed step 3: websiteChecker program"
 
 
 
@@ -141,17 +145,20 @@ At the end of this step, you should be able to generate the following output:
 
 ```
 $ rm ./testFile
-$ time ./websiteChecker "example.com" "sleep 5; touch $PWD/testFile"
+$ time ./websiteChecker "example.com" "sleep 1; touch $PWD/testFile"
 
 real    0m0.004s
 user    0m0.000s
 sys     0m0.000s
-$ sleep 5
+$ sleep 2
 $ ls ./testFile
 ./testFile
 $ rm ./testFile
 ```
 
+#### Commit
+
+Please make a commit at the end of this step, with the title "Completed step 4: deamonized program"
 
 
 
@@ -160,44 +167,16 @@ $ rm ./testFile
 
 
 
-### Step 5: an unexpected twist
 
-Take a look at the script within the `scripts/` directory. When run, they create a file in the user's home directory:
+### Step 5: testing
 
-```
-$ ./scripts/do_important_stuff.sh
-$ ls ~/test_important_stuff
-/Users/you/test_important_stuff
-$ rm ~/test_important_stuff
-```
-
-Now, try calling this script as part of the program from the previous step:
-
-```
-$ rm ~/test_important_stuff
-$ cd src/
-$  ./websiteChecker "example.com" "$PWD/../scripts/do_important_stuff.sh"
-$ ls ~/test_important_stuff
-No such file or directory
-```
-
-Clearly, something has gone wrong! Please either explain why out loud to your interviewer or write an explanation in the file `./explanation.txt`.
-
-Also, please fix it :)
+Please add a test to the `test/` directory. You may use any testing framework you choose (or none at all). Please also modify the Makefile to compile and run these tests when calling `make test-build` and `make test-run`, respectively. If you are running out of time, please document your intentions with comments in the code.
 
 #### Verification
 
-At the end of this step, you should be able to generate the following output:
-
-```
-$ rm ~/test_important_stuff
-$ cd src/
-$  ./websiteChecker "example.com" "$PWD/../scripts/do_important_stuff.sh"
-$ ls ~/test_important_stuff
-/Users/you/test_important_stuff
-```
+At the end of this step, you should be able to run `make test-build` and `make test-run`.
 
 #### Commit
 
-Please make a commit at the end of this step, with the title "Completed the interview"
+Please make a commit at the end of this step, with the title "Completed step 5: testing"
 
